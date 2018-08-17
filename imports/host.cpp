@@ -21,6 +21,8 @@ Associated Filename: main.c
 #include <sys/time.h>
 #include <CL/opencl.h>
 #include <CL/cl_ext.h>
+#include <CL/cl2.hpp>
+#include <limits.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -268,11 +270,11 @@ int main(int argc, char** argv)
 
 
 
-    d_axi00_im = clCreateBuffer(context,  CL_MEM_READ_WRITE | CL_MEM_EXT_PTR_XILINX,  sizeof(int) * number_of_words, &d_bank0_ext, NULL);
+    d_axi00_im = clCreateBuffer(context,  CL_MEM_READ_WRITE | CL_MEM_EXT_PTR_XILINX,  sizeof(int) * im_number_of_words, &d_bank0_ext, NULL);
 
 
 
-    d_axi01_wm = clCreateBuffer(context,  CL_MEM_READ_WRITE | CL_MEM_EXT_PTR_XILINX,  sizeof(int) * number_of_words, &d_bank0_ext, NULL);
+    d_axi01_wm = clCreateBuffer(context,  CL_MEM_READ_WRITE | CL_MEM_EXT_PTR_XILINX,  sizeof(int) * wm_number_of_words, &d_bank0_ext, NULL);
 
 
     if (!(d_axi00_im&&d_axi01_wm)) {
