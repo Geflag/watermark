@@ -140,7 +140,7 @@ inst_axi_read_master (
 //   .m_axis_tlast  (                              )   // Not used
 // );
 
-module water_mark (
+water_mark water_mark (
     .clk                  (kernel_clk     ),
     .rst_n                (~kernel_rst    ),
     .i_done               (ap_done              ),
